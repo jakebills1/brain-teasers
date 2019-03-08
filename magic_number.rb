@@ -1,13 +1,14 @@
 
 require 'to_words'
-def magic_number
+def prompt
   puts "Please input a number or type quit"
   input = gets.strip
-  if input == "quit"
-    exit 
-  else
-    input = input.to_i
+  while input != "quit"
+    magic_number(input.to_i)
   end
+  exit 
+end
+def magic_number(input)
   length = input.to_words.length
   puts "#{input} is #{length.to_words}"
   while length != 4
@@ -16,9 +17,9 @@ def magic_number
     puts "#{input} is #{length.to_words}"
   end
   puts "#{length} is the magic number"
+  prompt 
 end
     
 
 
-
-magic_number
+prompt

@@ -3,9 +3,10 @@ def capitalize(str)
   capitalized = []
   # split into array
   str_array.each do |word|
-    word.gsub(/[a-z]/, /[A-Z]/) << capitalized
+    puts word.sub(/[a-z]/, "\1".upcase()) 
   end
-  puts capitalized.join(" ")
+  # puts capitalized.join(" ")
 end
 
 capitalize("the quick brown fox")
+    
